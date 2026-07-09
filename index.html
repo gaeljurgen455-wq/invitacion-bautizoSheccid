@@ -11,7 +11,7 @@
     <style>
         :root {
             --rosa-pastel: #fbcbc9;
-            --rosa-oscuro: #e58a8a; /* <--- COLOR ACTUALIZADO: Un rosa más vivo y notable */
+            --rosa-oscuro: #e58a8a; /* Rosa vivo e intenso */
             --dorado: #dfb76c;
             --texto: #4a3e3e;
             --blanco: #ffffff;
@@ -454,8 +454,10 @@
         <div class="seccion-animada">
             <h2><i class="fa-solid fa-champagne-glasses"></i> Recepción</h2>
             <p style="margin: 5px 0;"><strong>Lugar:</strong> Quinta San Ysidro</p>
-            <p style="font-size: 0.85em; color: #706262; margin: 5px 0; line-height: 1.5;">Calle Administradores 399 col Maria mercado de. López. Sánchez entre Geólogos y. Neurólogos</p>
-            <a href="https://maps.app.goo.gl/QPsrHsVfHfs8JBFv8?g_st=aw"_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> Ver Mapa</a>
+            <!-- LÍNEA 312: TEXTO DE LA DIRECCIÓN -->
+            <p style="font-size: 0.85em; color: #706262; margin: 5px 0; line-height: 1.5;">ESCRIBE_AQUÍ_LA_NUEVA_DIRECCIÓN_TEXTUAL</p>
+            <!-- LÍNEA 314: ENLACE DE GOOGLE MAPS -->
+            <a href="PEGA_AQUÍ_EL_NUEVO_LINK_DE_GOOGLE_MAPS" target="_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> Ver Mapa</a>
         </div>
 
         <!-- Sección de Itinerario -->
@@ -679,7 +681,7 @@
             seccion.scrollIntoView({ behavior: 'smooth' });
         }
 
-        /* ENVÍO CON MANEJO DE MODAL SIN RECARGAR PÁGINA */
+        /* ENVÍO SEGURO CON TU ENLACE DE FORMSPREE */
         function enviarRespuesta(estado) {
             var adultos = document.getElementById('adultos').value;
             var niños = document.getElementById('niños').value;
@@ -689,18 +691,19 @@
                 return;
             }
 
-            // Usamos Fetch para enviar en segundo plano y capturar la respuesta
             var formData = new FormData();
             formData.append("Familia", familiaDetectada);
             formData.append("Asistencia", estado);
             formData.append("Adultos Confirmados", adultos);
             formData.append("Niños Confirmados", niños);
-            formData.append("_subject", "Confirmación Bautizo: Familia " + familiaDetectada);
-            formData.append("_captcha", "false");
 
-            fetch('https://formsubmit.co/ajax/sheccidbautizo@gmail.com', {
+            // LÍNEA 495: TU ENLACE CONFIGURADO
+            fetch('https://formspree.io/f/xkoldwor', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             })
             .then(response => {
                 abrirModal();
