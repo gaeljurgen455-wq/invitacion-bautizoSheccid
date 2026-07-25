@@ -4,69 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación al Bautizo de Sheccid Aisha</title>
-    <!-- Librería de iconos profesionales y Fuentes Elegantes Corregidas -->
+    <!-- Librería de iconos profesionales y Fuentes Elegantes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --rosa-pastel: #fbcbc9;
-            --rosa-oscuro: #e58a8a; /* Rosa vivo e intenso */
+            --rosa-oscuro: #e58a8a;
             --dorado: #dfb76c;
             --texto: #4a3e3e;
             --blanco: #ffffff;
         }
 
-        /* SEGURIDAD: Evita que puedan seleccionar el texto para copiarlo */
+        /* SEGURIDAD: Evita selección de texto */
         * {
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Playfair Display', Georgia, serif;
             font-style: italic; 
-            background: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1000&auto=format&fit=crop') no-repeat center center fixed;
+            /* MARCO/FONDO DE ENTORNO EN TODA LA PANTALLA */
+            background-image: url('fondo.png'); /* Cambia a .jpg si tu imagen usa esa extensión */
             background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #fceae8; /* Color de respaldo */
             color: var(--texto);
             margin: 0;
-            padding: 0;
+            padding: 25px 15px; /* Espacio para dejar ver el marco alrededor */
             overflow-x: hidden;
             transition: filter 0.3s ease;
+            position: relative;
+            min-height: 100vh;
         }
 
-        /* SEGURIDAD CRÍTICA: Desenfoque si se intenta capturar o si pierde el foco de la pantalla */
+        /* ANGELITO ANIMADO EN LA ESQUINA SUPERIOR IZQUIERDA */
+        .angel-flotante {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 85px;
+            height: auto;
+            z-index: 1000;
+            pointer-events: none;
+            filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+            animation: flotarAngel 3.5s ease-in-out infinite;
+        }
+
+        @keyframes flotarAngel {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(-4deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* SEGURIDAD CRÍTICA: Desenfoque de protección */
         body.protegido {
             filter: blur(25px) grayscale(100%);
         }
 
-        /* Capa de suavizado sobre el fondo */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 246, 245, 0.6);
-            z-index: 0;
-            pointer-events: none;
-        }
-
+        /* TARJETA PRINCIPAL ENMARCADA */
         .container {
-            max-width: 500px;
-            margin: 40px auto;
-            background: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(8px); 
-            -webkit-backdrop-filter: blur(8px);
-            padding: 35px 25px;
-            border-radius: 20px;
-            box-shadow: 0 12px 40px rgba(212, 165, 165, 0.2);
+            max-width: 480px;
+            margin: 15px auto;
+            background: rgba(255, 255, 255, 0.93); 
+            backdrop-filter: blur(6px); 
+            -webkit-backdrop-filter: blur(6px);
+            padding: 35px 22px;
+            border-radius: 25px;
             
-            /* Marco elegante de doble línea */
-            border: 6px double var(--dorado);
+            /* Sombra profunda y halo para resaltar sobre el fondo/marco */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.45);
+            
+            /* Doble borde dorado elegante */
+            border: 5px double var(--dorado);
             outline: 1px solid var(--rosa-pastel);
-            outline-offset: -12px;
+            outline-offset: -10px;
 
             position: relative;
             z-index: 2;
@@ -80,8 +100,8 @@
             margin: 25px 0;
             padding: 15px;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.5); 
-            border: 1px solid rgba(251, 203, 201, 0.3);
+            background: rgba(255, 255, 255, 0.6); 
+            border: 1px solid rgba(251, 203, 201, 0.4);
         }
 
         .seccion-animada.visible {
@@ -99,14 +119,14 @@
             padding: 15px;
             border-left: 2px solid var(--rosa-pastel);
             border-right: 2px solid var(--rosa-pastel);
-            background: rgba(255, 252, 252, 0.5);
+            background: rgba(255, 252, 252, 0.6);
         }
 
         h1 {
             font-family: 'Great Vibes', cursive;
             font-style: normal;
             color: var(--rosa-oscuro);
-            font-size: 5.2em; 
+            font-size: 5em; 
             margin: 15px 0 0px 0; 
             font-weight: normal;
             line-height: 1;
@@ -117,7 +137,7 @@
             font-family: 'Great Vibes', cursive;
             font-style: normal;
             color: var(--dorado);
-            font-size: 3.5em;
+            font-size: 3.4em;
             margin-top: -5px;
             margin-bottom: 20px;
             line-height: 1;
@@ -150,7 +170,7 @@
             border: 3px solid var(--blanco);
             outline: 2px solid var(--dorado);
             outline-offset: 4px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             margin: 15px auto;
         }
 
@@ -158,14 +178,14 @@
         .cuenta-regresiva {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             margin: 25px auto;
             max-width: 320px;
         }
 
         .tiempo-bloque {
-            background: rgba(255, 249, 249, 0.7);
-            border: 1px solid rgba(251, 203, 201, 0.4);
+            background: rgba(255, 249, 249, 0.8);
+            border: 1px solid rgba(251, 203, 201, 0.5);
             padding: 8px;
             border-radius: 10px;
             flex: 1;
@@ -268,8 +288,8 @@
         }
 
         .nota-card {
-            background: rgba(255, 249, 249, 0.6);
-            border: 1px solid rgba(251, 203, 201, 0.4);
+            background: rgba(255, 249, 249, 0.7);
+            border: 1px solid rgba(251, 203, 201, 0.5);
             padding: 12px;
             border-radius: 12px;
             font-size: 0.85em;
@@ -323,7 +343,7 @@
             max-width: 300px;
             margin: 8px 0;
             border: 1px solid var(--rosa-pastel);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 8px;
             outline: none;
             text-align: center;
@@ -333,7 +353,7 @@
 
         #panel-pases {
             display: none;
-            background: rgba(255, 251, 251, 0.6);
+            background: rgba(255, 251, 251, 0.7);
             padding: 15px;
             border-radius: 12px;
             margin: 15px 0;
@@ -341,11 +361,13 @@
         }
 
         .audio-control {
-            margin: 20px 0 5px 0;
+            margin: 10px 0 15px 0;
             text-align: center;
+            position: relative;
+            z-index: 3;
         }
 
-        /* CUADRITO DE CONFIRMACIÓN FLOTANTE (MODAL) */
+        /* MODAL DE CONFIRMACIÓN */
         .modal-gracias {
             display: none;
             position: fixed;
@@ -394,6 +416,9 @@
     </style>
 </head>
 <body>
+
+    <!-- ANGELITO ANIMADO EN LA ESQUINA -->
+    <img src="angel.png" alt="Ángel" class="angel-flotante">
     
     <div class="audio-control">
         <audio id="musica" loop preload="auto">
@@ -454,13 +479,11 @@
         <div class="seccion-animada">
             <h2><i class="fa-solid fa-champagne-glasses"></i> Recepción</h2>
             <p style="margin: 5px 0;"><strong>Lugar:</strong> Quinta San Ysidro</p>
-            <!-- LÍNEA 312: TEXTO DE LA DIRECCIÓN -->
             <p style="font-size: 0.85em; color: #706262; margin: 5px 0; line-height: 1.5;">Calle Administradores 399 Col. Maria Mercado de López Sánchez entre Geólogos y Neurólogos</p>
-            <!-- LÍNEA 314: ENLACE DE GOOGLE MAPS -->
             <a href="https://maps.app.goo.gl/QPsrHsVfHfs8JBFv8?g_st=aw" target="_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> Ver Mapa</a>
         </div>
 
-        <!-- Sección de Itinerario -->
+        <!-- ITINERARIO -->
         <div class="seccion-animada">
             <h2><i class="fa-solid fa-clock"></i> Itinerario</h2>
             <div class="itinerario-contenedor">
@@ -479,7 +502,7 @@
             </div>
         </div>
 
-        <!-- Notas -->
+        <!-- NOTAS -->
         <div class="seccion-animada bloque-notas">
             <div class="nota-card">
                 <i class="fa-solid fa-shirt"></i>
@@ -518,7 +541,7 @@
         </div>
     </div>
 
-    <!-- CUADRITO FLOTANTE (MODAL DE AGRADECIMIENTO) -->
+    <!-- MODAL DE AGRADECIMIENTO -->
     <div id="modal-gracias" class="modal-gracias">
         <div class="modal-contenido">
             <i class="fa-solid fa-circle-check"></i>
@@ -530,9 +553,7 @@
     </div>
 
     <script>
-        /* ========================================================
-           SISTEMA DE SEGURIDAD INTEGRADO (ANTI-CAPTURA DE PANTALLA)
-           ======================================================== */
+        /* PROTECCIÓN ANTI-CAPTURA */
         document.addEventListener('contextmenu', e => e.preventDefault());
 
         document.addEventListener('keydown', function(e) {
@@ -566,9 +587,7 @@
             }, 400);
         }
 
-        /* ========================================================
-           BASE DE DATOS COMPLETA DE INVITADOS ACTUALIZADA
-           ======================================================== */
+        /* BASE DE DATOS DE INVITADOS */
         const baseFamilias = {
             "garcia gonzalez": { nombre: "García González", pases: 5 },
             "reyes edwin": { nombre: "Reyes Edwin", pases: 2 },
@@ -582,7 +601,7 @@
             "barragan toledo": { nombre: "Barragán Toledo", pases: 4 },
             "gonzalez manuel": { nombre: "González Manuel", pases: 1 },
             "medina rosa": { nombre: "Medina Rosa", pases: 1 },
-            "de reyes lucy": { nombre: "De Reyes Lucy (Pases sin definir/Ale)", pases: "un número personalizado de" },
+            "de reyes lucy": { nombre: "De Reyes Lucy", pases: "un número personalizado de" },
             "reyes gonzalez": { nombre: "Reyes González", pases: 5 },
             "rodriguez ruiz": { nombre: "Rodriguez Ruiz", pases: 3 },
             "reyes lorena": { nombre: "Reyes Lorena", pases: 3 },
@@ -599,7 +618,6 @@
             var panel = document.getElementById('panel-pases');
             var textoPases = document.getElementById('texto-pases');
             
-            // Limpieza de acentos
             var inputLimpio = input.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "");
 
             let claveEncontrada = Object.keys(baseFamilias).find(key => {
@@ -618,7 +636,7 @@
             }
         }
 
-        // CUENTA REGRESIVA
+        /* CUENTA REGRESIVA */
         var fechaEvento = new Date("Aug 1, 2026 00:00:00").getTime();
         
         function actualizarReloj() {
@@ -657,7 +675,7 @@
         window.addEventListener('scroll', verificarScroll);
         window.addEventListener('load', verificarScroll);
 
-        // MÚSICA
+        /* MÚSICA DE FONDO */
         var musica = document.getElementById("musica");
         var btnMusica = document.getElementById("btn-musica");
 
@@ -666,7 +684,7 @@
                 musica.play().then(function() {
                     btnMusica.innerHTML = "<i class='fa-solid fa-pause'></i> Pausar Música";
                 }).catch(function(error) {
-                    alert("Por seguridad, interactúa primero con la pantalla para activar.");
+                    alert("Por favor interactúa con la página antes de reproducir audio.");
                 });
             } else {
                 musica.pause();
@@ -681,7 +699,7 @@
             seccion.scrollIntoView({ behavior: 'smooth' });
         }
 
-        /* ENVÍO SEGURO CON TU ENLACE DE FORMSPREE */
+        /* ENVÍO CON FORMSPREE */
         function enviarRespuesta(estado) {
             var adultos = document.getElementById('adultos').value;
             var niños = document.getElementById('niños').value;
@@ -697,7 +715,6 @@
             formData.append("Adultos Confirmados", adultos);
             formData.append("Niños Confirmados", niños);
 
-            // LÍNEA 495: TU ENLACE CONFIGURADO
             fetch('https://formspree.io/f/xkoldwor', {
                 method: 'POST',
                 body: formData,
