@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación al Bautizo de Sheccid Aisha</title>
+    <!-- Librería de iconos profesionales y Fuentes Elegantes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rosa-pastel: #fbcbc9;
+            --rosa-oscuro: #e58a8a;
+            --dorado: #dfb76c;
+            --texto: #4a3e3e;
+            --blanco: #ffffff;
+        }
+
+        /* SEGURIDAD: Evita selección de texto */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic; 
+            /* MARCO/FONDO DE ENTORNO EN TODA LA PANTALLA */
+            background-image: url('fondo.png'); /* Cambia a .jpg si tu imagen usa esa extensión */
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #fceae8; /* Color de respaldo */
+            color: var(--texto);
+            margin: 0;
+            padding: 25px 15px; /* Espacio para dejar ver el marco alrededor */
+            overflow-x: hidden;
+            transition: filter 0.3s ease;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* ANGELITO ANIMADO EN LA ESQUINA SUPERIOR IZQUIERDA */
+        .angel-flotante {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 85px;
+            height: auto;
+            z-index: 1000;
+            pointer-events: none;
+            filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+            animation: flotarAngel 3.5s ease-in-out infinite;
+        }
+
+        @keyframes flotarAngel {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(-4deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* SEGURIDAD CRÍTICA: Desenfoque de protección */
+        body.protegido {
+            filter: blur(25px) grayscale(100%);
+        }
+
+        /* TARJETA PRINCIPAL ENMARCADA */
+        .container {
+            max-width: 480px;
+            margin: 15px auto;
+            background: rgba(255, 255, 255, 0.93); 
+            backdrop-filter: blur(6px); 
+            -webkit-backdrop-filter: blur(6px);
+            padding: 35px 22px;
+            border-radius: 25px;
+            
+            /* Sombra profunda y halo para resaltar sobre el fondo/marco */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.45);
+            
+            /* Doble borde dorado elegante */
+            border: 5px double var(--dorado);
+            outline: 1px solid var(--rosa-pastel);
+            outline-offset: -10px;
+
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .seccion-animada {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.9s ease-out;
+            margin: 25px 0;
+            padding: 15px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.6); 
+            border: 1px solid rgba(251, 203, 201, 0.4);
+        }
+
+        .seccion-animada.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .frase-bautizo {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #5a4d4d;
+            line-height: 1.6;
+            font-size: 0.95em;
+            margin: 20px 5px;
+            padding: 15px;
+            border-left: 2px solid var(--rosa-pastel);
+            border-right: 2px solid var(--rosa-pastel);
+            background: rgba(255, 252, 252, 0.6);
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-style: normal;
+            color: var(--rosa-oscuro);
+            font-size: 5em; 
+            margin: 15px 0 0px 0; 
+            font-weight: normal;
+            line-height: 1;
+            text-shadow: 1px 1px 2px rgba(212, 165, 165, 0.2);
+        }
+
+        .edad-titulo {
+            font-family: 'Great Vibes', cursive;
+            font-style: normal;
+            color: var(--dorado);
+            font-size: 3.4em;
+            margin-top: -5px;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--dorado);
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        h2 i {
+            font-size: 0.9em;
+            color: var(--rosa-oscuro);
+        }
+
+        .foto-niña {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--blanco);
+            outline: 2px solid var(--dorado);
+            outline-offset: 4px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            margin: 15px auto;
+        }
+
+        /* Cuenta regresiva */
+        .cuenta-regresiva {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px auto;
+            max-width: 320px;
+        }
+
+        .tiempo-bloque {
+            background: rgba(255, 249, 249, 0.8);
+            border: 1px solid rgba(251, 203, 201, 0.5);
+            padding: 8px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 65px;
+        }
+
+        .tiempo-numero {
+            display: block;
+            font-size: 1.6em;
+            font-weight: 600;
+            color: var(--rosa-oscuro);
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .tiempo-etiqueta {
+            font-size: 0.75em;
+            color: var(--texto);
+            display: block;
+            margin-top: 3px;
+        }
+
+        /* Carrusel */
+        .carrusel-contenedor {
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        @keyframes deslizarIzquierda {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        .carrusel-track {
+            display: flex;
+            width: max-content;
+            gap: 15px;
+            animation: deslizarIzquierda 20s linear infinite;
+        }
+
+        .carrusel-item {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid var(--blanco);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* Itinerario */
+        .itinerario-contenedor {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+            margin: 15px 5px;
+            padding-left: 20px;
+            border-left: 2px dashed var(--rosa-oscuro);
+            text-align: left;
+        }
+
+        .itinerario-item {
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .itinerario-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--dorado);
+            border: 2px solid var(--blanco);
+        }
+
+        .itinerario-hora {
+            font-weight: bold;
+            color: var(--rosa-oscuro);
+            font-size: 1.05em;
+        }
+
+        .itinerario-titulo {
+            font-size: 0.95em;
+            margin: 2px 0;
+            color: var(--texto);
+        }
+
+        /* Notas */
+        .bloque-notas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .nota-card {
+            background: rgba(255, 249, 249, 0.7);
+            border: 1px solid rgba(251, 203, 201, 0.5);
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        .nota-card i {
+            font-size: 1.3em;
+            color: var(--dorado);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .btn {
+            background-color: var(--rosa-oscuro);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 13px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px;
+            box-shadow: 0 4px 10px rgba(212, 165, 165, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #d47676;
+            transform: translateY(-2px);
+        }
+
+        .btn-si { background-color: #69b372; }
+        .btn-no { background-color: #e56b6b; }
+
+        #seccion-confirmacion {
+            display: none;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px dashed var(--rosa-pastel);
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            width: 85%;
+            max-width: 300px;
+            margin: 8px 0;
+            border: 1px solid var(--rosa-pastel);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            outline: none;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        #panel-pases {
+            display: none;
+            background: rgba(255, 251, 251, 0.7);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border: 1px dashed var(--rosa-pastel);
+        }
+
+        .audio-control {
+            margin: 10px 0 15px 0;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* MODAL DE CONFIRMACIÓN */
+        .modal-gracias {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 340px;
+            width: 80%;
+            text-align: center;
+            border: 4px double var(--dorado);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-gracias.mostrar {
+            display: flex;
+        }
+
+        .modal-gracias.mostrar .modal-contenido {
+            transform: scale(1);
+        }
+
+        .modal-contenido i {
+            font-size: 3.5em;
+            color: #69b372;
+            margin-bottom: 15px;
+        }
+
+        .modal-contenido h4 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8em;
+            margin: 0 0 10px 0;
+            color: var(--rosa-oscuro);
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ANGELITO ANIMADO EN LA ESQUINA -->
+    <img src="angel.png" alt="Ángel" class="angel-flotante">
+    
+    <div class="audio-control">
+        <audio id="musica" loop preload="auto">
+            <source src="tu-musica.mpeg" type="audio/mpeg">
+        </audio>
+        <button class="btn" id="btn-musica" onclick="controlarMusica()"><i class="fa-solid fa-music"></i> Activar Música</button>
+    </div>
+
+    <div class="container">
+
+        <p style="letter-spacing: 2px; font-size: 0.85em; color: #6e5d5d; margin-top: 10px;">Acompáñanos a celebrar el bautizo de</p>
+        
+        <h1>Sheccid Aisha</h1>
+        <div class="edad-titulo">2 Años</div>
+        
+        <div class="frase-bautizo">
+            "Señor, gracias por darme el don de la vida. Hoy recibo el agua bendita del bautismo como luz que guiará mi camino. Acompaña a mi familia y padrinos para que me enseñen a caminar con amor y fe."
+        </div>
+
+        <img src="foto.jpeg" alt="Sheccid Aisha" class="foto-niña">
+
+        <!-- CUENTA REGRESIVA -->
+        <div class="cuenta-regresiva">
+            <div class="tiempo-bloque"><span class="tiempo-numero" id="dias">00</span><span class="tiempo-etiqueta">Días</span></div>
+            <div class="tiempo-bloque"><span class="tiempo-numero" id="horas">00</span><span class="tiempo-etiqueta">Horas</span></div>
+            <div class="tiempo-bloque"><span class="tiempo-numero" id="minutos">00</span><span class="tiempo-etiqueta">Min</span></div>
+        </div>
+
+        <!-- SECCIÓN: MEJORES MOMENTOS -->
+        <div class="seccion-animada">
+            <h2><i class="fa-solid fa-heart"></i> Mejores Momentos</h2>
+            <div class="carrusel-contenedor">
+                <div class="carrusel-track">
+                    <img src="momento1.jpeg" class="carrusel-item" alt="Momento 1">
+                    <img src="momento2.jpeg" class="carrusel-item" alt="Momento 2">
+                    <img src="momento3.jpeg" class="carrusel-item" alt="Momento 3">
+                    <img src="momento4.jpeg" class="carrusel-item" alt="Momento 4">
+                    <img src="momento1.jpeg" class="carrusel-item" alt="Momento 1">
+                    <img src="momento2.jpeg" class="carrusel-item" alt="Momento 2">
+                    <img src="momento3.jpeg" class="carrusel-item" alt="Momento 3">
+                    <img src="momento4.jpeg" class="carrusel-item" alt="Momento 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion-animada">
+            <h2><i class="fa-solid fa-calendar-days"></i> Fecha</h2>
+            <p style="font-size: 1.1em; margin: 5px 0;"><strong>1 de Agosto de 2026</strong></p>
+        </div>
+
+        <div class="seccion-animada">
+            <h2><i class="fa-solid fa-church"></i> Ceremonia Religiosa</h2>
+            <p style="margin: 5px 0;"><strong>Parroquia:</strong> La Transfiguración del Señor</p>
+            <p style="font-size: 0.85em; color: #706262; margin: 5px 0;">C. Ñado 423, Valle Oriente, 27277 Torreón, Coah.</p>
+            <a href="https://maps.google.com/?q=Parroquia+La+Transfiguracion+del+Señor+Torreon" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> Ver Mapa</a>
+        </div>
+
+        <div class="seccion-animada">
+            <h2><i class="fa-solid fa-champagne-glasses"></i> Recepción</h2>
+            <p style="margin: 5px 0;"><strong>Lugar:</strong> Quinta San Ysidro</p>
+            <p style="font-size: 0.85em; color: #706262; margin: 5px 0; line-height: 1.5;">Calle Administradores 399 Col. Maria Mercado de López Sánchez entre Geólogos y Neurólogos</p>
+            <a href="https://maps.app.goo.gl/QPsrHsVfHfs8JBFv8?g_st=aw" target="_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> Ver Mapa</a>
+        </div>
+
+        <!-- ITINERARIO -->
+        <div class="seccion-animada">
+            <h2><i class="fa-solid fa-clock"></i> Itinerario</h2>
+            <div class="itinerario-contenedor">
+                <div class="itinerario-item">
+                    <span class="itinerario-hora">12:00 PM</span>
+                    <p class="itinerario-titulo"><strong>Misa de Bautizo</strong> en la Parroquia.</p>
+                </div>
+                <div class="itinerario-item">
+                    <span class="itinerario-hora">04:00 PM</span>
+                    <p class="itinerario-titulo"><strong>Bienvenida y Recepción</strong> en la Quinta.</p>
+                </div>
+                <div class="itinerario-item">
+                    <span class="itinerario-hora">05:00 PM</span>
+                    <p class="itinerario-titulo"><strong>Servicio de Comida</strong> para nuestros invitados.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTAS -->
+        <div class="seccion-animada bloque-notas">
+            <div class="nota-card">
+                <i class="fa-solid fa-shirt"></i>
+                <strong>Código de Ropa</strong><br>
+                ¡No olviden llevar su cambio de ropa cómoda para disfrutar al máximo de la Quinta!
+            </div>
+            <div class="nota-card">
+                <i class="fa-solid fa-gift"></i>
+                <strong>Mesa de Regalos</strong><br>
+                Su presencia es nuestro mayor regalo, pero si gustan tener un detalle, ¡cualquier regalo será bienvenido!
+            </div>
+        </div>
+
+        <div class="seccion-animada">
+            <button class="btn" onclick="mostrarConfirmacion()"><i class="fa-solid fa-envelope-open-text"></i> Confirmar Asistencia</button>
+        </div>
+
+        <!-- SISTEMA DE CONTRASEÑA -->
+        <div id="seccion-confirmacion" class="seccion-animada">
+            <h3>Introduce el nombre de tu familia:</h3>
+            <input type="text" id="pass-familia" placeholder="Escribe aquí..." oninput="verificarContraseña()">
+
+            <div id="panel-pases">
+                <p id="texto-pases"></p>
+                
+                <p><i class="fa-solid fa-user"></i> ¿Cuántos Adultos asisten?</p>
+                <input type="number" id="adultos" min="0" value="0">
+                
+                <p><i class="fa-solid fa-child"></i> ¿Cuántos Niños asisten?</p>
+                <input type="number" id="niños" min="0" value="0">
+
+                <br><br>
+                <button class="btn btn-si" onclick="enviarRespuesta('SÍ ASISTIRÉ')"><i class="fa-solid fa-check"></i> Sí Asistiré</button>
+                <button class="btn btn-no" onclick="enviarRespuesta('NO ASISTIRÉ')"><i class="fa-solid fa-xmark"></i> No Asistiré</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE AGRADECIMIENTO -->
+    <div id="modal-gracias" class="modal-gracias">
+        <div class="modal-contenido">
+            <i class="fa-solid fa-circle-check"></i>
+            <h4>¡Muchas Gracias!</h4>
+            <p>Gracias por confirmar su asistencia.</p>
+            <br>
+            <button class="btn" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        /* PROTECCIÓN ANTI-CAPTURA */
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        document.addEventListener('keydown', function(e) {
+            if (
+                e.key === "PrintScreen" || 
+                (e.ctrlKey && e.key === 'p') || 
+                (e.metaKey && e.shiftKey && e.key === '3') || 
+                (e.metaKey && e.shiftKey && e.key === '4') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'I')
+            ) {
+                e.preventDefault();
+                activarDesenfoqueSeguridad();
+            }
+        });
+
+        window.addEventListener('blur', activarDesenfoqueSeguridad);
+        window.addEventListener('focus', desactivarDesenfoqueSeguridad);
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                activarDesenfoqueSeguridad();
+            }
+        });
+
+        function activarDesenfoqueSeguridad() {
+            document.body.classList.add('protegido');
+        }
+
+        function desactivarDesenfoqueSeguridad() {
+            setTimeout(() => {
+                document.body.classList.remove('protegido');
+            }, 400);
+        }
+
+        /* BASE DE DATOS DE INVITADOS */
+        const baseFamilias = {
+            "garcia gonzalez": { nombre: "García González", pases: 5 },
+            "reyes edwin": { nombre: "Reyes Edwin", pases: 2 },
+            "reyes sandra": { nombre: "Reyes Sandra", pases: 3 },
+            "reyes patricia": { nombre: "Reyes Patricia", pases: 3 },
+            "reyes carrillo": { nombre: "Reyes Carrillo", pases: 2 },
+            "reyes alejandro": { nombre: "Reyes Alejandro", pases: 6 },
+            "medina mercedes": { nombre: "Medina & Mercedes", pases: 2 },
+            "hernandez sandra": { nombre: "Hernández Sandra", pases: 4 },
+            "aguilera gpe": { nombre: "Aguilera Gpe.", pases: 2 },
+            "barragan toledo": { nombre: "Barragán Toledo", pases: 4 },
+            "gonzalez manuel": { nombre: "González Manuel", pases: 1 },
+            "medina rosa": { nombre: "Medina Rosa", pases: 1 },
+            "de reyes lucy": { nombre: "De Reyes Lucy", pases: "un número personalizado de" },
+            "reyes gonzalez": { nombre: "Reyes González", pases: 5 },
+            "rodriguez ruiz": { nombre: "Rodriguez Ruiz", pases: 3 },
+            "reyes lorena": { nombre: "Reyes Lorena", pases: 3 },
+            "prueba 1": { nombre: "Prueba 1", pases: 3 },
+            "invitados1": { nombre: "Invitados 1", pases: 3 },
+            "invitado 2": { nombre: "Invitado 2", pases: 1 },
+            "invitado 3": { nombre: "Invitado 3", pases: 1 }
+        };
+
+        var familiaDetectada = "";
+
+        function verificarContraseña() {
+            var input = document.getElementById('pass-familia').value.trim().toLowerCase();
+            var panel = document.getElementById('panel-pases');
+            var textoPases = document.getElementById('texto-pases');
+            
+            var inputLimpio = input.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "");
+
+            let claveEncontrada = Object.keys(baseFamilias).find(key => {
+                let keyLimpia = key.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "");
+                return keyLimpia === inputLimpio;
+            });
+
+            if (claveEncontrada) {
+                var info = baseFamilias[claveEncontrada];
+                familiaDetectada = info.nombre;
+                textoPases.innerHTML = "<i class='fa-solid fa-star'></i> ¡Hola Familia " + info.nombre + "! Tienen <strong>" + info.pases + " pases personalizados</strong> disponibles.";
+                panel.style.display = 'block';
+            } else {
+                panel.style.display = 'none';
+                familiaDetectada = "";
+            }
+        }
+
+        /* CUENTA REGRESIVA */
+        var fechaEvento = new Date("Aug 1, 2026 00:00:00").getTime();
+        
+        function actualizarReloj() {
+            var ahora = new Date().getTime();
+            var distancia = fechaEvento - ahora;
+
+            var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+
+            if (distancia < 0) {
+                clearInterval(intervaloReloj);
+                document.querySelector(".cuenta-regresiva").innerHTML = "<p style='color:var(--dorado); font-weight:bold; font-size:1.2em;'>¡Llegó el gran día!</p>";
+                return;
+            }
+
+            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+        }
+        
+        actualizarReloj();
+        var intervaloReloj = setInterval(actualizarReloj, 1000);
+
+        function verificarScroll() {
+            var elementos = document.querySelectorAll('.seccion-animada');
+            elementos.forEach(function(el) {
+                var posicion = el.getBoundingClientRect().top;
+                var tamañoPantalla = window.innerHeight / 1.15;
+                if(posicion < tamañoPantalla) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', verificarScroll);
+        window.addEventListener('load', verificarScroll);
+
+        /* MÚSICA DE FONDO */
+        var musica = document.getElementById("musica");
+        var btnMusica = document.getElementById("btn-musica");
+
+        function controlarMusica() {
+            if (musica.paused) {
+                musica.play().then(function() {
+                    btnMusica.innerHTML = "<i class='fa-solid fa-pause'></i> Pausar Música";
+                }).catch(function(error) {
+                    alert("Por favor interactúa con la página antes de reproducir audio.");
+                });
+            } else {
+                musica.pause();
+                btnMusica.innerHTML = "<i class='fa-solid fa-music'></i> Activar Música";
+            }
+        }
+
+        function mostrarConfirmacion() {
+            var seccion = document.getElementById('seccion-confirmacion');
+            seccion.style.display = 'block';
+            seccion.classList.add('visible');
+            seccion.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        /* ENVÍO CON FORMSPREE */
+        function enviarRespuesta(estado) {
+            var adultos = document.getElementById('adultos').value;
+            var niños = document.getElementById('niños').value;
+
+            if(familiaDetectada === "") {
+                alert("Por favor ingresa un nombre de familia válido.");
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append("Familia", familiaDetectada);
+            formData.append("Asistencia", estado);
+            formData.append("Adultos Confirmados", adultos);
+            formData.append("Niños Confirmados", niños);
+
+            fetch('https://formspree.io/f/xkoldwor', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                abrirModal();
+                document.getElementById('pass-familia').value = "";
+                document.getElementById('panel-pases').style.display = 'none';
+            })
+            .catch(error => {
+                abrirModal();
+            });
+        }
+
+        function abrirModal() {
+            document.getElementById('modal-gracias').classList.add('mostrar');
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal-gracias').classList.remove('mostrar');
+        }
+    </script>
+</body>
+</html>
